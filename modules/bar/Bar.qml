@@ -1,4 +1,6 @@
 import Quickshell
+import QtQuick.Layouts
+import QtQuick
 
 Scope {
   Variants {
@@ -7,19 +9,38 @@ Scope {
     PanelWindow {
       required property var modelData
       screen: modelData
+      color: "transparent"
 
-      property real margin: 8
+      property real margin: 10
 
       anchors {
         top: true
       }
 
-      implicitHeight: child.height + margin * 2
-      implicitWidth: child.implicitWidth + margin * 2
+      implicitHeight: layout.implicitHeight + margin
+      implicitWidth: layout.implicitWidth + margin
 
-      ClockWidget {
-        id: child
-        anchors.centerIn: parent
+      RowLayout {
+        id: layout
+        anchors.fill: parent
+        spacing: 6
+
+        Rectangle {
+          color: 'black'
+          Layout.fillWidth: true
+
+          property real marginHeight: 8
+          property real marginWidth: 40
+
+
+          radius: 30
+
+          Layout.preferredWidth: clockWidget.implicitWidth + marginWidth * 2
+          Layout.preferredHeight: clockWidget.implicitHeight + marginHeight * 2
+          ClockWidget {
+            id: clockWidget
+          }
+        }
       }
     }
   }
