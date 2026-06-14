@@ -1,6 +1,7 @@
 import Quickshell
 import QtQuick.Layouts
 import QtQuick
+import qs
 
 Scope {
   Variants {
@@ -11,7 +12,7 @@ Scope {
       screen: modelData
       color: "transparent"
 
-      property real margin: 10
+      property real margin: 8
 
       anchors {
         top: true
@@ -26,10 +27,10 @@ Scope {
         spacing: 6
 
         Rectangle {
-          color: 'black'
+          color: Colors.bg
           Layout.fillWidth: true
 
-          property real marginHeight: 8
+          property real marginHeight: 6
           property real marginWidth: 40
 
 
