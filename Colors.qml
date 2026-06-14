@@ -1,0 +1,1 @@
+/home/valentin/.config/themes/nord/quickshell/Colors.qml
