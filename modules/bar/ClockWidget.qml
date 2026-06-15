@@ -1,5 +1,5 @@
 import QtQuick
-import qt
+import qs
 
 Text {
   anchors.centerIn: parent
