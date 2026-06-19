@@ -3,7 +3,12 @@ import qs
 
 Text {
   anchors.centerIn: parent
-  font.pointSize: 16
+
+  font {
+    pointSize: Colors.fontSize;
+    family: Colors.fontFamily
+    bold: true 
+  }
   color: Colors.fg
   text: Time.time
 }

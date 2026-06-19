@@ -1,0 +1,37 @@
+import Quickshell
+import Quickshell.Hyprland
+
+import QtQuick
+import QtQuick.Layouts
+
+import qs
+
+RowLayout {
+  anchors.centerIn: parent
+  anchors.margins: 8
+
+  Repeater {
+    model: 10
+
+    Text {
+      property var ws: Hyprland.workspaces.values.find(w => w.id === index + 1)
+      property bool isActive: Hyprland.focusedWorkspace?.id === (index + 1)
+      text: index + 1
+      color: isActive ? Colors.fg : (ws !== undefined ? Colors.accent : Colors.surface)
+      visible: index < 5 || isActive || ws !== undefined
+      font { 
+        pointSize: Colors.fontSize - 1; 
+        family: Colors.fontFamily
+        bold: true 
+      }
+
+      MouseArea {
+        anchors.fill: parent
+        onClicked: Hyprland.dispatch("hl.dsp.focus({workspace = " + (index + 1) + " })")
+      }
+    }
+  }
+
+
+  Item { Layout.fillWidth: true }
+}
