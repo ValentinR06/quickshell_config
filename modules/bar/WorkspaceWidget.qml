@@ -7,8 +7,6 @@ import QtQuick.Layouts
 import qs
 
 RowLayout {
-  anchors.centerIn: parent
-  anchors.margins: 8
 
   Repeater {
     model: 10
@@ -20,7 +18,7 @@ RowLayout {
       color: isActive ? Colors.fg : (ws !== undefined ? Colors.accent : Colors.surface)
       visible: index < 5 || isActive || ws !== undefined
       font { 
-        pointSize: Colors.fontSize - 1; 
+        pixelSize: Colors.fontSize; 
         family: Colors.fontFamily
         bold: true 
       }

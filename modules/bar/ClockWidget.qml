@@ -1,11 +1,10 @@
+import Quickshell
 import QtQuick
 import qs
 
 Text {
-  anchors.centerIn: parent
-
   font {
-    pointSize: Colors.fontSize;
+    pixelSize: Colors.fontSize;
     family: Colors.fontFamily
     bold: true 
   }

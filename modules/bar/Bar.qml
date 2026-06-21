@@ -18,20 +18,31 @@ Scope {
         right: true
       }
 
-      height: 30
+      height: 32
 
       RowLayout {
         id: layout
         anchors.fill: parent
+        anchors.leftMargin: 14
+        anchors.rightMargin: 14
+
+        spacing: 10
+
 
         WorkspaceWidget {
           id: workspaceWidget
         }
 
+        Item { Layout.fillWidth: true }
+
+
+        BatteryWidget {
+          id: batteryWidget
+        }
+
         ClockWidget {
           id: clockWidget
         }
-
 
       }
     }
