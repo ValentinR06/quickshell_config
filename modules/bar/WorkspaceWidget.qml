@@ -31,5 +31,5 @@ RowLayout {
   }
 
 
-  Item { Layout.fillWidth: true }
+  Item { Layout.fillWidth: index !== 10 }
 }

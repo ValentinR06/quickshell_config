@@ -6,7 +6,7 @@ Text {
   font {
     pixelSize: Colors.fontSize;
     family: Colors.fontFamily
-    bold: true 
+    bold: true
   }
   color: Colors.fg
   text: Time.time

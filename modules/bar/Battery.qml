@@ -16,5 +16,4 @@ Singleton {
   readonly property bool charging: {
     ready ? UPower.displayDevice.state === UPowerDeviceState.Charging : false
   }
-  
 }

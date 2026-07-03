@@ -35,15 +35,15 @@ Scope {
 
         Item { Layout.fillWidth: true }
 
-
-        BatteryWidget {
-          id: batteryWidget
-        }
-
         ClockWidget {
           id: clockWidget
         }
 
+        Item { Layout.fillWidth: true}
+
+        BatteryWidget {
+          id: batteryWidget
+        }
       }
     }
   }
