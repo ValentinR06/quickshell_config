@@ -5,7 +5,7 @@ import qs
 
 RowLayout {
   id: root
-  spacing: 6
+  spacing: 4
 
   readonly property string icon: {
     if (Battery.charging) return String.fromCodePoint(0xF0084)
@@ -29,13 +29,13 @@ RowLayout {
   }
 
   Text {
-  font {
-    pixelSize: Colors.fontSize;
-    family: Colors.fontFamily
-    weight: Font.Medium
+    font {
+      pixelSize: Colors.fontSize;
+      family: Colors.fontFamily
+      weight: Font.Medium
+    }
+    color: Colors.fg
+    text: Battery.percentage + "%"
   }
-  color: Colors.fg
-  text: Battery.percentage + "%"
-}
 }
 

@@ -18,31 +18,46 @@ Scope {
         right: true
       }
 
-      height: 32
-
-      RowLayout {
-        id: layout
+      implicitHeight: 32
+      Item {
         anchors.fill: parent
         anchors.leftMargin: 14
         anchors.rightMargin: 14
 
-        spacing: 10
-
-
-        WorkspaceWidget {
-          id: workspaceWidget
+        RowLayout {
+          anchors.left: parent.left
+          anchors.verticalCenter: parent.verticalCenter
+          
+          WorkspaceWidget {
+            id: workspaceWidget
+          }
         }
 
-        Item { Layout.fillWidth: true }
-
-        ClockWidget {
-          id: clockWidget
+        RowLayout {
+          anchors.centerIn: parent
+          
+          ClockWidget {
+            id: clockWidget
+          }
         }
 
-        Item { Layout.fillWidth: true}
+        RowLayout {
+          anchors.right: parent.right
+          anchors.verticalCenter: parent.verticalCenter
+          spacing: 10
+          
+          
+          BluetoothWidget {
+            id: bluetoothWidget
+          }
 
-        BatteryWidget {
-          id: batteryWidget
+          WifiWidget {
+            id: wifiWidget
+          }
+
+          BatteryWidget {
+            id: batteryWidget
+          }
         }
       }
     }

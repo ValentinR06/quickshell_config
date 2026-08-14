@@ -1,8 +1,11 @@
 import Quickshell
 import "./modules/bar"
+import "./modules/launcher"
 //import "./modules/osd"
 
 Scope {
-    Bar { }
-    //VolumeOSD { }
+  Bar { id: bar}
+  Launcher { id: launcher}
 }
+
+

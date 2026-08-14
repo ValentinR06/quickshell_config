@@ -7,7 +7,6 @@ import QtQuick.Layouts
 import qs
 
 RowLayout {
-
   Repeater {
     model: 10
 
@@ -29,7 +28,4 @@ RowLayout {
       }
     }
   }
-
-
-  Item { Layout.fillWidth: index !== 10 }
 }
