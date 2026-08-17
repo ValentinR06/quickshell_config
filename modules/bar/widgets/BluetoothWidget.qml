@@ -4,10 +4,11 @@ import QtQuick.Layouts
 import qs
 
 Item {
-  implicitWidth: icon.width
-  implicitHeight: icon.height
+  implicitWidth: text.width
+  implicitHeight: text.height
   Text {
-    id : icon
+    id : text
+
     font {
       pixelSize: Colors.fontSize;
       family: Colors.fontFamily
@@ -21,10 +22,10 @@ Item {
     anchors.fill: parent
     hoverEnabled: true
     onEntered: {
-      icon.color = Colors.accent
+      text.color = Colors.accent
     }
     onExited: {
-      icon.color = Colors.fg
+      text.color = Colors.fg
     }
     onClicked: {
       Quickshell.execDetached(["kitty", "--", "bluetui"])

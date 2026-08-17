@@ -3,6 +3,8 @@ import QtQuick.Layouts
 import QtQuick
 import qs
 
+import "widgets"
+
 Scope {
   Variants {
     model: Quickshell.screens
@@ -45,14 +47,17 @@ Scope {
           anchors.right: parent.right
           anchors.verticalCenter: parent.verticalCenter
           spacing: 10
-          
+
+          SoundWidget {
+            id: soundWidget
+          }          
           
           BluetoothWidget {
             id: bluetoothWidget
           }
 
-          WifiWidget {
-            id: wifiWidget
+          NetworkWidget {
+            id: networkWidget
           }
 
           BatteryWidget {
