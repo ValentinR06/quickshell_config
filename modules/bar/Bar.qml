@@ -3,6 +3,8 @@ import QtQuick.Layouts
 import QtQuick
 import qs
 
+import "widgets"
+
 Scope {
   Variants {
     model: Quickshell.screens
@@ -10,36 +12,56 @@ Scope {
     PanelWindow {
       required property var modelData
       screen: modelData
-      color: "transparent"
-
-      property real margin: 8
+      color: Colors.bg
 
       anchors {
         top: true
+        left: true
+        right: true
       }
 
-      implicitHeight: layout.implicitHeight + margin
-      implicitWidth: layout.implicitWidth + margin
-
-      RowLayout {
-        id: layout
+      implicitHeight: 32
+      Item {
         anchors.fill: parent
-        spacing: 6
+        anchors.leftMargin: 14
+        anchors.rightMargin: 14
 
-        Rectangle {
-          color: Colors.bg
-          Layout.fillWidth: true
+        RowLayout {
+          anchors.left: parent.left
+          anchors.verticalCenter: parent.verticalCenter
+          
+          WorkspaceWidget {
+            id: workspaceWidget
+          }
+        }
 
-          property real marginHeight: 6
-          property real marginWidth: 40
-
-
-          radius: 30
-
-          Layout.preferredWidth: clockWidget.implicitWidth + marginWidth * 2
-          Layout.preferredHeight: clockWidget.implicitHeight + marginHeight * 2
+        RowLayout {
+          anchors.centerIn: parent
+          
           ClockWidget {
             id: clockWidget
+          }
+        }
+
+        RowLayout {
+          anchors.right: parent.right
+          anchors.verticalCenter: parent.verticalCenter
+          spacing: 10
+
+          SoundWidget {
+            id: soundWidget
+          }          
+          
+          BluetoothWidget {
+            id: bluetoothWidget
+          }
+
+          NetworkWidget {
+            id: networkWidget
+          }
+
+          BatteryWidget {
+            id: batteryWidget
           }
         }
       }

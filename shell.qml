@@ -1,10 +1,11 @@
-// shell.qml
 import Quickshell
 import "./modules/bar"
+import "./modules/launcher"
 //import "./modules/osd"
 
 Scope {
-    // Quickshell evaluates your monitors and maps windows to them
-    Bar { }
-    //VolumeOSD { }
+  Bar { id: bar}
+  Launcher { id: launcher}
 }
+
+
